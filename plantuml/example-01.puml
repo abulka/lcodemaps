@@ -1,0 +1,103 @@
+@startuml More complete example of a Literate Code Map - 01
+
+!$code = "<color:royalBlue><size:14>"
+
+header
+<font color=red>Prototype of "Compact UML" idea:</font>
+(c) Andy Bulka 2019
+
+endheader
+
+class Compact {
+    .. def <u><b>fred() ..
+        <i>Mainly responsible for this and that
+        <i>Calls GetShapeList() to get all the shapes
+
+        + for shape in self.GetDiagram().<b>GetShapeList()</b>:  <u>1
+
+        <i>Then process this and that calling the parent
+
+        + if shape.<b>GetParent()</b> == None:  <u>2
+
+        <i>which results in something $codeb  cool and nice</color> etc.
+        <i>and which can be used for step  <u>22.
+
+    .. def <u><b>mary</b>(self, param2) ..
+            blah blah
+        # calls shape.SetCanvas(None)  <u>3
+}
+class Shape {
+    SetCanvas()
+    GetParent()
+    SetBrush()
+}
+class Diagram <<lib.ogl._lines.py>> {
+    aaa
+    bbb
+    Dothis()
+    Dothat()
+    .. GetShapeList() ..
+    def GetShapeList(self):
+    	x = 100
+    \tfor each shape: find it  # fast
+    \treturn result
+
+    .. fresh() ..
+    <i>Create fresh visualisation
+
+    $code for node in self.displaymodel.graph.nodes:
+    $code  assert not node.shape
+    $code  if isinstance(node, CommentNode) or hasattr(node, "comment"):
+    $code      shape = self.createCommentShape(node)  	</color><u>22
+    $code  else:
+    $code      shape = self.CreateUmlShape(node)
+}
+
+class Shape {
+    more_methods()
+    .. GetParent() ..
+    Looks like if you define a class a second time,
+    those methods etc. are added again. !!
+    So perhaps we just add the methods that we want
+    to explain again and this time in the sub-box
+    we have here.
+    --
+    .. SetBrush() ..
+    Its actually arguably nice to have all the methods
+    listed above in the traditional way, then ppick out
+    the few that we are interested in again and expand
+    upon them in these sub-boxes.
+}
+
+class Scenario1 < when user clicks on button ><< (S,#FF7700) start here >>
+
+Scenario1 ..> Compact : fred()
+Compact ..> Diagram : 1. GetShapeList()\n -> List
+Compact ..> Shape : 2. GetParent()\n -> Shape
+Compact ..> Shape : 3. SetCanvas()
+
+
+
+note as N2
+This is the technique
+for making notes that attach
+via a normal single line  <u>22
+
+I should put this intoGitUML
+:-)
+end note
+N2 . Compact
+N2 .[hidden] Compact
+
+note "these two classes talk via blah" as N3
+N3 .. Compact
+N3 .. Diagram
+
+center footer
+
+A "Compact UML" diagram
+combines class and sequence diagrams into one.
+Plus adds code fragments and numbered references.
+end footer
+
+@enduml

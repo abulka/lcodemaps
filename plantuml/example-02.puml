@@ -1,0 +1,148 @@
+@startuml More complete example of a Literate Code Map - 02
+
+!$code = "<color:royalBlue><size:14>"
+!$codeb = "<color:DarkSlateGray><size:12>"
+!$codeg = "<color:Gray><size:12>"
+!$codeb = "<color:royalBlue>"
+!$codep = "<color:Purple><size:14>"
+
+header
+<font color=red>File upload UML</font>
+(c) Andy Bulka 2019
+endheader
+
+class urls < START HERE: when user clicks on file upload link ><<(M,#FF7700) singlepage/urls.py>>{
+    .. urlpatterns ..
+    /fileupload -> $codeb  views.fileupload</color> <u>1</u> <color:Red> * main user start point
+    
+    /upload_file -> $codeb  views.upload_file
+    /file_upload_uml/<str:event>/ -> $codeb  views.file_upload_uml
+}
+
+class views <<(M,#FF7700)  singlepage.views.py>> {
+    .. def fileupload(request): ..
+        $codeb  <u>1.</u></color>
+        $codeb return render(request, 
+        $codeb\t"<b>fileupload.html</b>", {"object_list": None}) $codeb  <u>2.</u></color>
+
+    .. def upload_file(request, uid=None): ..
+    $codeb  <u>3.</u></color>
+    Calculates an "event" based on the user name and date, and stores all
+    uploaded files in a directory UPLOAD_DIR/event.
+      
+    $codeb form = FileUploadForm(request.POST, request.FILES or None)
+    $codeb file = request.FILES['file']
+    $codeb event = <b>calc_upload_eventdir</b>(request.user, datetime.datetime.now())
+    $codeb dir = os.path.join(UPLOAD_DIR, event)
+    $codeb path = os.path.join(dir, file.name)
+    $codeb <b>handle_uploaded_file</b>(file, path)  $codeb  <u>A1.</u></color>
+
+    $codeb return HttpResponse(json.dumps(data), content_type="application/json")
+    <color:Red>Typical AJAX HttpResponse is
+    $codeg  <class 'dict'>: {'status': 'success', 
+    $codeg                   'file': 'display_model.py', 
+    $codeg                   'event': 'admin-1-2019-04-17-12:12:47'}
+
+    .. def handle_uploaded_file(file, path=None): ..
+    $codeb  <u>A1.</u></color>
+    <i>This should be changed to using memcache rather than the local file system!</i>
+    $codeb path = os.path.join('uploaded', file.name)  # work out dir 
+    $codeb os.makedirs(os.path.dirname(path))  # and create dir
+    $codeb with open(path, 'wb+') as destination: ... destination.write(chunk) # writes out file
+    
+    .. def file_upload_uml(request, event): ..
+    $codeb   <u>4.</u></color>
+    $codeb   <u>6.</u></color>
+    Called when all files have been successfully uploaded.
+    "event" gives us a way to refer to those files.
+    Combines custom plantumltext (which initially will be blank) into a UML diagram based on <b>paths</b>
+    
+    $codeb image_url, generated_plant_uml_text = <b>uploaded_local_paths_to_uml_url</b>(
+    $codeb     <b>paths</b>, custom_plant_uml_text, ..., options_uml
+    $codeb     )
+    
+    then where do we go?
+    well, we render the "fileupload_uml.html" template
+    
+    $codeb form = MyFileUploadForm(initial={"custom_plant_uml_text": ""})
+
+    which is
+    $codeb class MyFileUploadForm(forms.Form):
+    $codeb   custom_plant_uml_text = forms.CharField(
+    $codeb       label="Additional custom plantuml text", required=False, widget=forms.Textarea
+    $codeb   )
+    Note that it is not inheriting from forms.ModelForm
+     
+    $codeb return render(
+    $codeb     request,
+    $codeb     "fileupload_uml.html",  $codeb  <u>5.</u></color>
+    $codeb     {
+    $codeb         "python_text": python_text,
+    $codeb         # "show_python_text": True,
+    $codeb         "generated_plant_uml_text": generated_plant_uml_text,
+    $codeb         "custom_plant_uml_text": None,
+    $codeb         "image_url": image_url,
+    $codeb         "form": form,
+    $codeb         "event": event,
+    $codeb         "paths_ro": paths_ro,
+    $codeb     },    
+    $codeb 
+}
+
+class fileupload <<(T,#FF7700) singlepage/templates/fileupload.html>> {
+    Change /upload-target to your upload address, in this case it is "upload_file"
+    for each file
+
+    $codeb   <u>3.</u></color>
+    $codeb <form action="{% url '<b>upload_file</b>' %}" class="dropzone" id="myAwesomeDropzone">
+    $codeb     {% csrf_token %}
+    $codeb </form>
+    .. javascript ..
+    once all files have been uploaded
+    $codeb function submit_upload_uml_event()
+    $codeb     event = last_upload_event
+    $codeb     window.location.href = '<b>file_upload_uml/[object Event]</b>'  $codeb   <u>4.</u></color>
+}
+
+class fileupload_uml <<(T,#FF7700) singlepage/templates/fileupload_uml.html>> {
+    Actually displays the UML diagram.  The only thing we upload 
+    via the form is the custom plantuml. The "event" parameter of the url
+    lets us find the source files etc.
+    $codeb <form action={% url 'file_upload_uml' event %}  method="POST">
+}
+
+urls --> views : $codeb   <u>1.</u></color> fileupload()
+views --> fileupload : $codeb  <u>2.</u></color> fileupload\n template render
+fileupload --> views : $codeb   <u>3.</u></color> upload_file(data)\nonce for each file via AJAX
+fileupload --> views : $codeb   <u>4.</u></color> file_upload_uml/[object Event]\nonce all have been uploaded
+views -> fileupload_uml : $codeb  <u>5.</u></color> fileupload_uml(image_url, form, etc.)\n template render UML
+fileupload_uml -> views : $codeb   <u>6.</u></color> file_upload_uml/[object Event] $codeb  \nto regenerate the UML
+
+note as N1
+upload_file() is called multiple times, once for each file
+passing back (in the AJAX response) the first calculated event 
+to the javascript so that all subsequent files get put into the 
+same event/directory
+end note
+
+N1 .. views
+N1 ..[hidden] views
+
+note as N2
+views.fileupload_uml() $codeb   <u>4.</u></color> is called automatically
+after the initial file upload, to render the 
+initial UML.
+
+views.fileupload_uml() $codeb   <u>6.</u></color> is called by the user
+pressing "Generate UML" button on subsequent
+renderings, as the UML is refined, by fiddling
+with custom plantuml text.
+  
+<i>(the user cannot edit info/classes etc in 
+<i> the uploaded Python files themselves) 
+end note
+
+N2 .. fileupload_uml
+N2 .. views
+
+@enduml
