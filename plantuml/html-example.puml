@@ -1,0 +1,52 @@
+@startuml example of HTML file in a code map diagram
+
+!$code = "<color:royalBlue><size:14>"
+!$codeb = "<color:DarkSlateGray><size:12>"
+!$codeg = "<color:Gray><size:12>"
+!$codeb = "<color:royalBlue>"
+!$codep = "<color:Purple><size:14>"
+!$normal = "<color:Black><size:11>"
+
+class fileupload <<(T,#FF7700) HTML FILE singlepage/templates/fileupload.html>> {
+    myAwesomeDropzone : form
+    myCanvas : canvas
+    --javascript--
+    submit_upload_uml_event()
+    render()
+    ---
+    This is the HTML form
+
+    $codeb <b><form</b> action="{% url '<b>upload_file</b>' %}" class="dropzone" id="myAwesomeDropzone">
+    $codeb     {% csrf_token %}
+    $codeb <b></form></b>
+    
+    This is the HTML canvas
+
+    $codeb <canvas <b>id="myCanvas"</b> width="200" height="100">  <color:Red> #33</color>
+    $codeb </canvas>
+
+    .. function <b>submit_upload_uml_event</b>() ..
+    once all files have been uploaded we redirect
+    to the $codeb file_upload_uml/</color> endpoint
+
+    $codeb ...
+    $codeb function <b>submit_upload_uml_event</b>()
+    $codeb     event = last_upload_event
+    $codeb     window.location.href = '<b>file_upload_uml/${event}</b>'
+
+    .. def <b>render</b>(): ..
+        This uses the canvas <color:Black> <i>see</i>  <color:Red>33</color>
+        to draw the shape
+        $codeb ...
+        $codeb var c = document.getElementById(<b>"myCanvas"</b>); $codeg non jquery ref to canvas $normal <color:Black><i>see</i> <color:Red> 33</color>
+        $codeb var ctx = c.getContext("2d");
+        $codeb ctx.moveTo(0, 0);
+        $codeb ctx.lineTo(200, 100);
+        $codeb ctx.stroke();
+        $codeb ...
+
+        See [[https://www.w3schools.com/html/html5_canvas.asp]]
+        for more information on canvas drawing.
+}
+
+@enduml

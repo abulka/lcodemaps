@@ -1,0 +1,41 @@
+@startuml numbered steps
+
+!$code = "<color:royalBlue><size:14>"
+!$codeb = "<color:DarkSlateGray><size:12>"
+!$codeg = "<color:Gray><size:12>"
+!$codeb = "<color:royalBlue>"
+!$codep = "<color:Purple><size:14>"
+
+class Scenario1 < when user clicks on button ><< (S,#FF7700) start here >>
+
+class View {
+    onClick()
+}
+
+class CoordinateManager {
+    getEventLocation(point)
+}
+
+class Shape {
+    render()
+    .. def <b>render</b>(): ..
+        This uses the canvas to draw the shape
+        $codeb ...
+        $codeb var c = document.getElementById("myCanvas");
+        $codeb ...
+}
+
+class index <<(H,#FF7700) HTML FILE templates/index.html>> {
+    This is the HTML fragment containing 
+    the canvas DOM element
+
+    $codeb <canvas <b>id="myCanvas"</b> width="200" height="100">
+    $codeb </canvas>
+}
+
+Scenario1 ..> View : <u>1.</u> user clicks mouse on canvas\n<b>onClick</b>()
+View ..> CoordinateManager : <i>call from onClick()</i>\n<u>2.</u> calculate what is being clicked on\n<b>getEventLocation</b>(point)
+View ..> Shape : <i>call from onClick()</i>\n<u>3.</u> draw the shape\n<b>render</b>()
+Shape ..> index : <i>from render()</i>\n<u>4.</u> refer to the canvas\nid=<b>"myCanvas"</b>
+
+@enduml

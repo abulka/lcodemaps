@@ -1,0 +1,48 @@
+@startuml Basic idea of a literate code map
+
+!$code = "<color:royalBlue><size:14>"
+!$codeb = "<color:DarkSlateGray><size:12>"
+!$codeg = "<color:Gray><size:12>"
+!$codeb = "<color:royalBlue>"
+!$codep = "<color:Purple><size:14>"
+
+class Payroll {
+    last_run: date
+    employees[]: list  <color:Red> #22  $codeg this can be implemented as attr or DB call
+    ----
+    pay()
+    count()
+    auth_to_bank()
+    .. def <b>pay</b>(): ..
+        We loop through all employees and only pay them
+        if they <i>can be located</i>. 😄
+
+        $codeb for employee in employees:
+        $codeb     found = employee.locate()
+        $codeb     ...
+        $codeb     ...
+        $codeb     if found:
+        $codeb         bank.send_money(
+        $codeb \t                        <b>employee.bank_ac_number</b>, 
+        $codeb \t                        employee.salary)
+        $codeb     ...
+
+    .. def <b>count</b>(): ..
+        We simply return the length of the <b>employees</b>
+        attribute which is a list.
+
+        $codeb return employee.<b>length()</b>  <color:Black> <i>see</i> <color:Red> 22.
+
+        However when this is turned into a database facing method in version two
+        we will need to change the implementation 
+
+
+        | Version | Implementation |\n| V1 | List |\n| V2 | Django ORM DB query |
+
+        e.g. something like
+
+        $codeb return employee.Objects.all().<b>count()</b>
+}
+
+
+@enduml

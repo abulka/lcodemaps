@@ -1,0 +1,10 @@
+@startuml Example of Python module as pseudo class
+
+class utils <<(M,#FF7700) MODULE utils.py>> {
+    x
+    y
+    ---
+    fred()
+}
+
+@enduml

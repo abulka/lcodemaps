@@ -1,0 +1,9 @@
+@startuml Basic UML class diagram
+
+class Payroll {
+    employees[]
+    pay()
+    count()
+}
+
+@enduml
