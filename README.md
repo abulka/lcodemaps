@@ -38,7 +38,7 @@ A diagram should have a starting point and a series of steps to follow, to tell 
 
 ![numbered steps code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/numbered-steps.puml&fmt=svg)
 
-Notice the box "H" which represents a HTML file, let's talk about this more now.
+Notice the box "H" which represents a HTML file - you see, boxes can represent any Namespace or Component - not just Classes, as we will see below.
 
 ## Cross References
 
@@ -50,7 +50,7 @@ Lines between boxes are reserved for function calls.
 
 # Boxes represent any namespace
 
-In Literate Code Maps diagrams, boxes represent any Namespace - not just Classes.
+In Literate Code Maps diagrams, boxes can represent any Namespace/Component/File/Thing - not just Classes.
 Even files can be represented. Code Map diagrams boxes can represent:
 
 * classes
@@ -146,7 +146,7 @@ Please also check out
 
 # History - Why Code Maps?
 
-When I have encountered a huge codebase, or an old project I wrote myself, or just a complex code area - I typically trace out and make notes as I read the code. How many programmers do something similar?  Here is an example of a hand-crafted literate code map:
+Whenever I have encountered a huge codebase, or an old project I wrote myself, or just a complex code area - I typically trace out and make notes as I read the code. How many programmers do something similar?  Here is an example of a hand-crafted literate code map:
 
 ![hand_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-code-map-andy.png)
 
