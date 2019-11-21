@@ -70,7 +70,7 @@ HTML files with fragments of HTML markup can be represented - great for showing 
 Javascript code fragments residing in the HTML file
 can be represented - see above diagram.
 
-## Files of just Functions as Boxes
+## Boxes of Functions (no classes)
 
 Files containing *just* functions and variables (no classes) can be represented as boxes in a way that makes them "look like" classes. For example, the Python file "utils.py"
 
@@ -83,7 +83,7 @@ def fred():
 
 turns into 
 
-![Python module as pseudo class](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/python-module.puml&fmt=svgv)
+![Python module as pseudo class](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/python-module.puml&fmt=svg)
 
 which looks like a class, even though there is not a Class in sight!
 
@@ -101,41 +101,57 @@ This representational idea is also a boon for Javascript programmers who may hav
 
 Here are some more examples of literate code maps.
 
-## Simple Example
-
-![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svgv)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
 ## More Complex Example
 
-![code map example 02](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-02.puml&fmt=svgv)
+![code map example 02](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-02.puml&fmt=svg)
 
-# Building Literate Code Maps Yourself
+Larger diagrams can be zoomed into.  If they are rendered as SVG images then there is no loss of detail.  All the diagrams in this article are SVG and can be clicked on and zoomed into.
+
+The public PlantUML server used to render these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the helpfile in [Pynsource](www.pynsource.com) for local PlantUML server install instructions, or simply google for them.
+
+# Building your own Literate Code Maps
 
 Please use [PlantUML](http://plantuml.com/) markup to generate your diagrams. 
 
 To create code subsections in boxes/classes, use the following markdown sytax e.g.:
 
-    .. def handle_uploaded_file(file, path=None): ..
+    .. def myfunction(param1, param2): ..
 
 To include code fragments inside classes, 
 define some handy macros then use the following markdown sytax e.g.:
 
-```plantuml
-!$code = "<color:royalBlue><size:14>"
-!$codeb = "<color:DarkSlateGray><size:12>"
-!$codeg = "<color:Gray><size:12>"
-!$codeb = "<color:royalBlue>"
-!$codep = "<color:Purple><size:14>"
-```
+    !$code = "<color:royalBlue><size:14>"
 
 then simply add the word `codeb` before each line of your code fragment. Use spaces to indent, or `\t`.
 
-    $codeb for i in range(100):
-    $codeb     print(i)
+    $code for i in range(100):
+    $code     print(i)
+
+View the [examples directory](https://github.com/abulka/lcodemaps/tree/master/plantuml) for the full source code to the code maps used in this article.
 
 Please also check out 
 [GitUML](https://www.gituml.com) which supports building UML and Literate Code Map diagrams online, using a combination of source code reverse engineering and PlantUML markup.
 
+# History - Why Code Maps?
+
+When I have encountered a huge codebase, or an old one I wrote myself, or just a complex code area - I typically trace out and make notes as I read the code. How many programmers do something similar?  Here is an example of a hand-crafted literate code map:
+
+![hand_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-code-map-andy.png)
+
+Over the years, this has developed into a methodology of sorts. Then I started copying and pasting code fragment screenshots into a paint tool - why re-write when you can copy and paste!  I connected the boxes with lines and added narrative text comments. This was a *little* more professional, but gee - I wish I had auto-layout so that I could squeeze and rearrange the diagram when I discovered new things. Here is an example of an old hand built digital literate code map diagram:
+
+![screenshot_crafted_early_code_map](https://www.dropbox.com/s/y1bffaccvonetwg/2018-11-06_prepare_repotree%20need%20user%20token.jpg?raw=1)
+
+Then I moved on to using PlantUML markup code - allowing the diagrams and notes to be automatically laid out, be pretty to look at and maintainable.
+
+![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+
+## Tufte
+
+Whilst I knew my literate code maps worked - I didn't have any research or scientific backing for them. Then I thought of Edward Tuft's visualisation work, which I have been a fan of for a long time. Sure enough, his ideas on density, detail, rich formatting, use of icons and small graphics at any place where you would put text - are all consistent with literate code maps.
+
 # Contributing
 
-If you wish to contribute to this diagramming specification I am open to pull requests.
+If you wish to contribute to this diagramming specification I am open to pull requests. Let's make *Literate Code Maps* something that brings practical, useful visualisation technology back into software development, without the old UML baggage.
