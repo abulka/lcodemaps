@@ -113,11 +113,11 @@ Here are some more examples of literate code maps.
 
 ## More Complex Example
 
-![code map example 02](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-02.puml&fmt=svg)
+![code map example 02](https://raw.github.com/abulka/lcodemaps/master/images/example-02.svg)
 
 Larger diagrams can be zoomed into.  If they are rendered as SVG images then there is no loss of detail.  All the diagrams in this article are SVG and can be clicked on and zoomed into.
 
-The public PlantUML server used to render these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the helpfile in [Pynsource](www.pynsource.com) for local PlantUML server install instructions, or simply google for them.
+The public PlantUML server used to render these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the [PlantUML Server Documentation](http://plantuml.com/server) and you may also find the helpfile in [Pynsource](www.pynsource.com) useful as it contains more detailed local PlantUML server install instructions that I give my Pynsource (Python UML tool for Mac, Windows, Linux) customers.
 
 # Building your own Literate Code Maps
 
