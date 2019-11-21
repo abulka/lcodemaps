@@ -40,6 +40,14 @@ A diagram should have a starting point and a series of steps to follow, to tell 
 
 Notice the box "H" which represents a HTML file, let's talk about this more now.
 
+## Cross References
+
+Use of cross reference numbers in the diagram handle the multi-dimensional relationships involved in thinking about and explaining software, and its cross cutting concerns.
+
+Cross references are red numbers e.g. `22` or `23` with destinations as e.g. `#22`.
+
+Lines between boxes are reserved for function calls.
+
 # Boxes represent any namespace
 
 In Literate Code Maps diagrams, boxes represent any Namespace - not just Classes.
@@ -113,7 +121,9 @@ The public PlantUML server used to render these code maps has a limit on the siz
 
 # Building your own Literate Code Maps
 
-Please use [PlantUML](http://plantuml.com/) markup to generate your diagrams. 
+By building a Code Map of a particular use case store of  code base, you will not only grow to understand the code, but you can refer to your code map in the future, and share it with colleagues.
+
+It is recommended to use [PlantUML](http://plantuml.com/) markup to generate your Literate Code Map diagrams. 
 
 To create code subsections in boxes/classes, use the following markdown sytax e.g.:
 
@@ -136,21 +146,50 @@ Please also check out
 
 # History - Why Code Maps?
 
-When I have encountered a huge codebase, or an old one I wrote myself, or just a complex code area - I typically trace out and make notes as I read the code. How many programmers do something similar?  Here is an example of a hand-crafted literate code map:
+When I have encountered a huge codebase, or an old project I wrote myself, or just a complex code area - I typically trace out and make notes as I read the code. How many programmers do something similar?  Here is an example of a hand-crafted literate code map:
 
 ![hand_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-code-map-andy.png)
 
 Over the years, this has developed into a methodology of sorts. Then I started copying and pasting code fragment screenshots into a paint tool - why re-write when you can copy and paste!  I connected the boxes with lines and added narrative text comments. This was a *little* more professional, but gee - I wish I had auto-layout so that I could squeeze and rearrange the diagram when I discovered new things. Here is an example of an old hand built digital literate code map diagram:
 
-![screenshot_crafted_early_code_map](https://www.dropbox.com/s/y1bffaccvonetwg/2018-11-06_prepare_repotree%20need%20user%20token.jpg?raw=1)
+![screenshot_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-screenshot-based-code-map-andy.jpg)
 
 Then I moved on to using PlantUML markup code - allowing the diagrams and notes to be automatically laid out, be pretty to look at and maintainable.
 
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
-## Tufte
+# Tufte
 
-Whilst I knew my literate code maps worked - I didn't have any research or scientific backing for them. Then I thought of Edward Tuft's visualisation work, which I have been a fan of for a long time. Sure enough, his ideas on density, detail, rich formatting, use of icons and small graphics at any place where you would put text - are all consistent with literate code maps.
+Whilst I knew my literate code maps worked (for me, personally) - I didn't have any research or scientific backing for them. 
+
+Then I thought of Edward Tuft's visualisation work, which I have been a fan of for a long time. Sure enough, his ideas on density, detail, rich formatting, use of icons and small graphics at any place where you would put text - are all consistent with literate code maps. Especially the idea of combining detail and abstraction in the same diagram - the boxes are the abstraction and the code is the detail.
+
+I hope to tie more of Tufte's insights into the Literate Code Map methodology, as well as draw from the vast field of [Information Visualization](https://en.wikipedia.org/wiki/Information_visualization).
+
+> Wikipedia says “Information visualization presumes that "visual representations and interaction techniques take advantage of the human eye’s broad bandwidth pathway into the mind to allow users to see, explore, and understand large amounts of information at once. Information visualization focused on the creation of approaches for conveying abstract information in intuitive ways.
+
+I also like many of the ideas of [C4 architecture notation](https://c4model.com) e.g. each line being labelled and having a direction. C4 also has some good criticisms of UML in the main C4 video, which I encourage people to watch.
+
+# UML
+
+Literate Code Maps are not UML.  
+
+Code Maps are more detailed and can actually be used to debug code and add features, because they contain code fragments which are relevant to day to day programmers. They contain narrative, story telling text - which leverages how we learn. They also take advantage of the human eye’s broad bandwidth pathway to take in visual information.
+
+UML *is* useful when judiciously used, but most UML diagrams tend to be too abstract to actually be helpful to a programmer.  As I write in [my blog](http://www.andypatterns.com/), 
+
+> UML (Unified Modelling Language) has fallen out of favour in the last decade and now tends to only get used in the most basic of ways.  Sketches on whiteboards to commuicate class relationships or code execution sequences. Or simple diagrams in documentation and designs.  Nobody uses the complex notations of UML 2, because digramming cannot keep up with the myriad programming techniques and paradigms of 2018 - code is simply not reducible to visual information.
+
+I think that there are a limited numbers of cases where UML diagrams might be helpful:
+- whiteboard communication
+- database modelling
+- big picture architecture diagrams (also see [C4 architecture notation](https://c4model.com))
+- class diagrams of complex class relationships
+- representing design patterns
+- sequence diagrams of certain code behaviours
+- state diagrams are also sometimes useful
+
+UML lacks normal human, tutorial-like, step by step narrative textual storytelling and code level detail.  Staring at at a UML diagram typically leaves you wanting much more detailed information. Staring at source code typically leaves you wanting a diagram of relationships and context. Literate Code Maps are an attempt to solve this problem.
 
 # Contributing
 
