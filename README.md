@@ -129,6 +129,33 @@ To create code subsections in boxes/classes, use the following markdown sytax e.
 
     .. def myfunction(param1, param2): ..
 
+For each box, first list attributes and methods
+in the traditional UML way, with a dividing line between them - let's
+call this the summary view.
+Then append extra compartements within the box for each method
+we are interested in expanding upon with code detail and text narrative.
+Any methods which are expanded, should be bolded in the UML summary view
+of methods, so that the reader knows there is more detail below.
+
+> When using PlantUML to build Literate Code Maps, it is useful to know that you can define a class multiple times and PlantUML will combine all the definitions into the one box.  In this way you can incrementally build up the diagram. You could create one piece of PlantUML to define the summary view, then another piece of PlantUML to create the additional code detail compartments.
+
+    class Shape {
+        canvas
+        parent
+        --
+        SetCanvas()
+        GetParent()
+        SetBrush()
+    }
+    class Shape {
+        .. SetCanvas() ..
+        Narrative rich text comments and code about this method here.
+
+        .. GetParent() ..
+        Narrative rich text comments and code about this method here.
+        $code ...
+    }
+
 To include code fragments inside classes, 
 define some handy macros then use the following markdown sytax e.g.:
 
