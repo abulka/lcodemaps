@@ -51,14 +51,14 @@ Lines between boxes are reserved for function calls.
 # Boxes represent any namespace
 
 In Literate Code Maps diagrams, boxes can represent any Namespace/Component/File/Thing - not just Classes.
-Even files can be represented. Code Map diagrams boxes can represent:
+Even files can be represented as boxes in the diagram. Code Map diagrams boxes can thus represent:
 
 * classes
 * packages
 * functions
 * namespaces
 * files of any type e.g. HTML
-* Python module files
+* module files of Python/C/Go/etc
 * sub-systems
 * any architectural or deployment grouping
 * etc.
@@ -68,9 +68,10 @@ Object Oriented paradigms, and are thus more universal and useful.
 
 Instead of using square boxes, you might want to use different shapes e.g. https://blog.anoff.io/puml-cheatsheet.pdf shows all the component types you can use.
 
+It is recommended that boxes have a "stereotype" indicating what kind of box it is. For example for a Python module is stamped with an "M" which stands for module. To be explicit and less mysterious, we can also spell out the word "MODULE" and the path to the file in the diagram box. For HTML files the icon stereotype should be "H" with the word "HTML FILE" and the path to the file etc.
+
 ## HTML files as Boxes
 
-For example, 
 HTML files with fragments of HTML markup can be represented - great for showing how code interacts with HTML templating. 
 
 ![html file code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/html-example.puml&fmt=svg)
@@ -78,7 +79,7 @@ HTML files with fragments of HTML markup can be represented - great for showing 
 Javascript code fragments residing in the HTML file
 can be represented - see above diagram.
 
-## Boxes of Functions (no classes)
+## Files of functions as Boxes (no classes)
 
 Files containing *just* functions and variables (no classes) can be represented as boxes in a way that makes them "look like" classes. For example, the Python file "utils.py"
 
@@ -93,17 +94,12 @@ turns into
 
 ![Python module as pseudo class](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/python-module.puml&fmt=svg)
 
-which looks like a class, even though there is not a Class in sight!
+which looks like a class, even though there is not a class in sight!
 
 Thus, Python programmers with modules (files) containing
 only variables and functions will be able to visualise their
 codebase. The online diagramming tool [GitUML](https://www.gituml.com) already supports reverse engineering Python modules into boxes in this way.
-
-> It is recommended that boxes have a "stereotype" indicating what kind of box it is. For example for a Python module we stamp it with an "M" which stands for module as well as spell out the word "MODULE" and the path to the file. For HTML files the icon stereotype should be "H" etc.
-
-This representational idea is also a boon for Javascript programmers who may have lots of variables and functions, and no classes.  Together with the ability to visualise HTML files as boxes, web developers now have the ability to model. 
-
-> This modelling idea applies to other functional programming languages.  Ideally the data / behaviour separation in boxes should be followed.
+This representational idea is also a boon for Javascript programmers who may have lots of variables and functions, and no classes.  Together with the ability to visualise HTML files as boxes, web developers now have the ability to model aspects of their projects. Other languages that have files containing functions include Delphi/Object Pascal, Go, C and many others. Ideally the data / behaviour separation in boxes should always be followed.
 
 # Examples
 
