@@ -74,7 +74,7 @@ It is recommended that boxes have a "stereotype" indicating what kind of box it 
 
 HTML files with fragments of HTML markup can be represented - great for showing how code interacts with HTML templating. 
 
-![html file code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/html-example.puml&fmt=png)
+![html file code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/html-example.puml&fmt=svg)
 
 Javascript code fragments residing in the HTML file
 can be represented - see above diagram.
@@ -210,13 +210,14 @@ UML *is* useful when judiciously used, but most UML diagrams tend to be too abst
 I think that there are a limited numbers of cases where UML diagrams might be helpful:
 - whiteboard communication
 - database modelling
+- reverse engineering existing projects to understand them (see [GitUML](https://gituml.com))
 - big picture architecture diagrams (also see [C4 architecture notation](https://c4model.com))
 - class diagrams of complex class relationships
 - representing design patterns
 - sequence diagrams of certain code behaviours
 - state diagrams are also sometimes useful
 
-UML lacks normal human, tutorial-like, step by step narrative textual storytelling and code level detail.  Staring at at a UML diagram typically leaves you wanting much more detailed information. Staring at source code typically leaves you wanting a diagram of relationships and context. Literate Code Maps are an attempt to solve this problem.
+UML usually lacks normal human, tutorial-like, step by step narrative textual storytelling and code level detail.  Staring at at a UML diagram typically leaves you wanting much more detailed information. Staring at source code typically leaves you wanting a diagram of relationships and context. Literate Code Maps are an attempt to solve this problem.
 
 # Contributing
 
