@@ -34,7 +34,7 @@ class fileupload <<(T,#FF7700) HTML FILE singlepage/templates/fileupload.html>> 
     $codeb     event = last_upload_event
     $codeb     window.location.href = '<b>file_upload_uml/${event}</b>'
 
-    .. def <b>render</b>(): ..
+    .. function <b>render</b>(): ..
         This uses the canvas <color:Black> <i>see</i>  <color:Red>33</color>
         to draw the shape
         $codeb ...

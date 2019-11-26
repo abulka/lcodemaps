@@ -74,7 +74,7 @@ It is recommended that boxes have a "stereotype" indicating what kind of box it 
 
 HTML files with fragments of HTML markup can be represented - great for showing how code interacts with HTML templating. 
 
-![html file code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/html-example.puml&fmt=svg)
+![html file code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/html-example.puml&fmt=png)
 
 Javascript code fragments residing in the HTML file
 can be represented - see above diagram.
@@ -99,7 +99,7 @@ which looks like a class, even though there is not a class in sight!
 Thus, Python programmers with modules (files) containing
 only variables and functions will be able to visualise their
 codebase. The online diagramming tool [GitUML](https://www.gituml.com) already supports reverse engineering Python modules into boxes in this way.
-This representational idea is also a boon for Javascript programmers who may have lots of variables and functions, and no classes.  Together with the ability to visualise HTML files as boxes, web developers now have the ability to model aspects of their projects. Other languages that have files containing functions include Delphi/Object Pascal, Go, C and many others. Ideally the data / behaviour separation in boxes should always be followed.
+This representational idea is also a boon for Javascript programmers who may have lots of variables and functions, and no classes.  Together with the ability to visualise HTML files as boxes, web developers now have the ability to model aspects of their projects. Other languages that have files containing only functions include Delphi/Object Pascal, Go, C and many others. Regardless of the language and box type, ideally, the traditional data / behaviour separation in boxes should always be followed.
 
 # Examples
 
@@ -113,7 +113,7 @@ Here are some more examples of literate code maps.
 
 Larger diagrams can be zoomed into.  If they are rendered as SVG images then there is no loss of detail.  All the diagrams in this article are SVG and can be clicked on and zoomed into.
 
-The public PlantUML server used to render these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the [PlantUML Server Documentation](http://plantuml.com/server) and you may also find the helpfile in [Pynsource](www.pynsource.com) useful as it contains more detailed local PlantUML server install instructions that I give my Pynsource (Python UML tool for Mac, Windows, Linux) customers.
+The public PlantUML server used to render these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the [PlantUML Server Documentation](http://plantuml.com/server). See also the helpfile in [Pynsource](www.pynsource.com) (Python UML tool for Mac, Windows, Linux) as it contains more specific PlantUML server local install instructions.
 
 # Building your own Literate Code Maps
 
@@ -128,7 +128,7 @@ To create code subsections in boxes/classes, use the following markdown sytax e.
 For each box, first list attributes and methods
 in the traditional UML way, with a dividing line between them - let's
 call this the summary view.
-Then append extra compartements within the box for each method
+Then append extra compartments within the box for each method
 we are interested in expanding upon with code detail and text narrative.
 Any methods which are expanded, should be bolded in the UML summary view
 of methods, so that the reader knows there is more detail below.
@@ -139,10 +139,11 @@ of methods, so that the reader knows there is more detail below.
         canvas
         parent
         --
-        SetCanvas()
-        GetParent()
+        <b>SetCanvas()</b>
+        <b>GetParent()</b>
         SetBrush()
     }
+
     class Shape {
         .. SetCanvas() ..
         Narrative rich text comments and code about this method here.
@@ -153,11 +154,11 @@ of methods, so that the reader knows there is more detail below.
     }
 
 To include code fragments inside classes, 
-define some handy macros then use the following markdown sytax e.g.:
+define some handy macros e.g.:
 
     !$code = "<color:royalBlue><size:14>"
 
-then simply add the word `codeb` before each line of your code fragment. Use spaces to indent, or `\t`.
+then simply add the word `code` before each line of your code fragment. Use spaces to indent, or `\t`.
 
     $code for i in range(100):
     $code     print(i)
@@ -174,12 +175,12 @@ Whenever I have encountered a huge codebase, or an old project I wrote myself, o
 ## Evolution - stage 1
 ![hand_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-code-map-andy.png)
 
-Over the years, this has developed into a methodology of sorts. Then I started copying and pasting code fragment screenshots into a paint tool - why re-write when you can copy and paste!  I connected the boxes with lines and added narrative text comments. This was a *little* more professional, but gee - I wish I had auto-layout so that I could squeeze and rearrange the diagram when I discovered new things. Here is an example of an old hand built digital literate code map diagram:
+Over the years, this became a useful and effective habit: when stuck, take a breath, respect the difficulty of the situation and - build a literate code map. Eventually I started copying and pasting code fragment screenshots into a paint tool - why re-write when you can copy and paste!  I connected the boxes with lines and added use usual narrative text comments. This was a *little* more professional, but gee - I wish I had auto-layout so that I could squeeze and rearrange the diagram when I discovered new things. Here is an example of an old hand built 'digital' literate code map diagram:
 
 ## Evolution - stage 2
 ![screenshot_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-screenshot-based-code-map-andy.jpg)
 
-Then I moved on to using PlantUML markup code - allowing the diagrams and notes to be automatically laid out, be pretty to look at and maintainable.
+Finally I moved on to using PlantUML markup code - allowing the diagrams and notes to be automatically laid out, be pretty to look at and maintainable.
 
 ## Evolution - stage 3
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
