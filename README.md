@@ -109,7 +109,7 @@ This representational idea is also a boon for Javascript programmers who may hav
 
 Here are some more examples of literate code maps.
 
-![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=png)
 
 ## More Complex Example
 
