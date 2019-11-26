@@ -171,14 +171,17 @@ Please also check out
 
 Whenever I have encountered a huge codebase, or an old project I wrote myself, or just a complex code area - I typically trace out and make notes as I read the code. How many programmers do something similar?  Here is an example of a hand-crafted literate code map:
 
+## Evolution - stage 1
 ![hand_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-code-map-andy.png)
 
 Over the years, this has developed into a methodology of sorts. Then I started copying and pasting code fragment screenshots into a paint tool - why re-write when you can copy and paste!  I connected the boxes with lines and added narrative text comments. This was a *little* more professional, but gee - I wish I had auto-layout so that I could squeeze and rearrange the diagram when I discovered new things. Here is an example of an old hand built digital literate code map diagram:
 
+## Evolution - stage 2
 ![screenshot_crafted_early_code_map](https://raw.github.com/abulka/lcodemaps/master/images/handcrafted-screenshot-based-code-map-andy.jpg)
 
 Then I moved on to using PlantUML markup code - allowing the diagrams and notes to be automatically laid out, be pretty to look at and maintainable.
 
+## Evolution - stage 3
 ![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
 # Tufte
