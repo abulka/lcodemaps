@@ -1,103 +1,110 @@
 @startuml More complete example of a Literate Code Map - 01
 
 !$code = "<color:royalBlue><size:14>"
+!$codeb = "<color:DarkSlateGray><size:12>"
+!$codeg = "<color:Gray><size:12>"
+!$codeb = "<color:royalBlue>"
+!$codep = "<color:Purple><size:14>"
 
 header
-<font color=red>Prototype of "Compact UML" idea:</font>
+<font color=red>Prototype of "Literate Code Maps"</font>
 (c) Andy Bulka 2019
 
 endheader
 
-class Compact {
-    .. def <u><b>fred() ..
-        <i>Mainly responsible for this and that
-        <i>Calls GetShapeList() to get all the shapes
+class View {
+    onKeyUp()
+    onClick()
+    ---
+    .. def <u><b>onClick() ..
 
-        + for shape in self.GetDiagram().<b>GetShapeList()</b>:  <u>1
+    Responsible for handling the clicl event.
+    Calls <b>GetShapeList()</b> on the <b>Diagram</b> to get all the shapes, then iterates
+    through them, checking each shape's parent. 
 
-        <i>Then process this and that calling the parent
+    $code ..
+    $code for shape in self.GetDiagram().<b>GetShapeList()</b>:  <color:Red><u> 2
+    $code   if shape.<b>GetParent()</b> == None:  <color:Red><u>3
+    $code   ..
 
-        + if shape.<b>GetParent()</b> == None:  <u>2
-
-        <i>which results in something $codeb  cool and nice</color> etc.
-        <i>and which can be used for step  <u>22.
-
-    .. def <u><b>mary</b>(self, param2) ..
-            blah blah
-        # calls shape.SetCanvas(None)  <u>3
+    .. def <u><b>onKeyUp</b>(self, event) ..
+    
+    Handles the <b>ESC</b> key being hit and switches the canvas
+    $code ..
+    $code shape.SetCanvas(None)  <color:Red><u>4
+    $code ..
 }
 class Shape {
-    SetCanvas()
-    GetParent()
+    canvas
+    parent
+    --
+    <b>SetCanvas()
+    <b>GetParent()
     SetBrush()
 }
 class Diagram <<lib.ogl._lines.py>> {
-    aaa
-    bbb
-    Dothis()
-    Dothat()
+    shapes
+    ---
+    <b>GetShapeList()
+    <b>Render()
+    Clear()
+    Scan()
     .. GetShapeList() ..
-    def GetShapeList(self):
-    	x = 100
-    \tfor each shape: find it  # fast
-    \treturn result
+    $code ...
+    $code result = []
+    $code for each shape in shapes: 
+    \t<i>various filtering conditions, if succesful,
+    \t<i>shape gets appended to the result
+    $code return result
 
-    .. fresh() ..
+    .. Render() ..
     <i>Create fresh visualisation
 
     $code for node in self.displaymodel.graph.nodes:
     $code  assert not node.shape
     $code  if isinstance(node, CommentNode) or hasattr(node, "comment"):
-    $code      shape = self.createCommentShape(node)  	</color><u>22
+    $code      shape = self.createCommentShape(node)  	<color:Red><u>22
     $code  else:
     $code      shape = self.CreateUmlShape(node)
 }
 
 class Shape {
-    more_methods()
-    .. GetParent() ..
-    Looks like if you define a class a second time,
-    those methods etc. are added again. !!
-    So perhaps we just add the methods that we want
-    to explain again and this time in the sub-box
-    we have here.
-    --
-    .. SetBrush() ..
-    Its actually arguably nice to have all the methods
-    listed above in the traditional way, then ppick out
-    the few that we are interested in again and expand
-    upon them in these sub-boxes.
+    .. <b>SetCanvas</b>(canvas) ..
+    $code ...
+    $code self.canvas = canvas   <color:Red>4
+    $code ...
+    .. <b>GetParent</b>() ..
+    Simply a reference to the <i>.parent</i> property, 
+    which is <i>None</i> if there is no parent.
+    $code ...
+    $code return self.parent
 }
 
 class Scenario1 < when user clicks on button ><< (S,#FF7700) start here >>
 
-Scenario1 ..> Compact : fred()
-Compact ..> Diagram : 1. GetShapeList()\n -> List
-Compact ..> Shape : 2. GetParent()\n -> Shape
-Compact ..> Shape : 3. SetCanvas()
+Scenario1 ..> View : 1. onClick()
+View ..> Diagram : 2. GetShapeList()\n -> List
+View ..> Shape : 3. GetParent()\n -> Shape
+View ..> Shape : 4. SetCanvas()
 
 
 
 note as N2
-This is the technique
-for making notes that attach
-via a normal single line  <u>22
-
-I should put this intoGitUML
-:-)
+The creation of a comment shape
+if a little different  <color:Red>22
 end note
-N2 . Compact
-N2 .[hidden] Compact
+N2 . View
+N2 .[hidden] View
 
-note "these two classes talk via blah" as N3
-N3 .. Compact
+note "The list of shapes is kept in the diagram, which the view uses" as N3
+N3 .. View
 N3 .. Diagram
 
 center footer
 
-A "Compact UML" diagram
+A "Literate Code Map" diagram
 combines class and sequence diagrams into one.
-Plus adds code fragments and numbered references.
+Plus adds code fragments, rich narrative text and numbered references.
 end footer
 
 @enduml
