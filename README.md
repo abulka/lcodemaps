@@ -99,7 +99,7 @@ which looks like a class, even though there is not a class in sight!
 Thus, Python programmers with modules (files) containing
 only variables and functions will be able to visualise their
 codebase. The online diagramming tool [GitUML](https://www.gituml.com) already supports reverse engineering Python modules into boxes in this way.
-This representational idea is also a boon for Javascript programmers who may have lots of variables and functions, and no classes.  Together with the ability to visualise HTML files as boxes, web developers now have the ability to model aspects of their projects. Other languages that have files containing only functions include Delphi/Object Pascal, Go, C and many others. Regardless of the language and box type, ideally, the traditional data / behaviour separation in boxes should always be followed.
+This representational idea is also a boon for Javascript programmers who may have lots of variables and functions, and no classes.  Together with the ability to visualise HTML files as boxes, web developers now have the ability to model aspects of their projects. Languages that may have files containing only functions include Python, Javascript, Kotlin, Delphi/Object Pascal, Go, C and many others. Regardless of the language and box type, ideally, the traditional data / behaviour separation in boxes should be followed.
 
 # Examples
 
