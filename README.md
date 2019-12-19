@@ -175,8 +175,11 @@ then simply add the word `code` before each line of your code fragment. Use spac
 
 View the [examples directory](https://github.com/abulka/lcodemaps/tree/master/plantuml) for the full source code to the code maps used in this article.
 
-Please also check out 
-[GitUML](https://www.gituml.com) which supports building UML and Literate Code Map diagrams online, using a combination of source code reverse engineering and PlantUML markup.
+## Tools to build code maps
+[GitUML](https://www.gituml.com) supports building UML and Literate Code Map diagrams online, using a combination of source code reverse engineering and PlantUML markup.
+
+[![](http://img.youtube.com/vi/ZnVMOhaIIM8/0.jpg)](http://www.youtube.com/watch?v=ZnVMOhaIIM8 "Quick Start - Creating a diagram and adding a code map compartment")
+*2 minute video tutorial*
 
 # History - Why Code Maps?
 
