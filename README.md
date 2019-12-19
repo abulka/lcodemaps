@@ -127,11 +127,13 @@ The public PlantUML server used to render these code maps has a limit on the siz
 
 # Building your own Literate Code Maps
 
-By building a Code Map of a particular use case store of  code base, you will not only grow to understand the code, but you can refer to your code map in the future, and share it with colleagues.
+By building a Literate Code Map of a particular use case story in  your code base, you *will* end up understanding the source code - and be able to effectively fix a bug or add a feature. As a bonus, you can refer to your code map in the future, and share it with colleagues.
 
-It is recommended to use [PlantUML](http://plantuml.com/) markup to generate your Literate Code Map diagrams. 
+>Think of building a Literate Code Map as the process of "taking notes" as you study code - something that most programmers aleady do. The benefit of a code map is that the diagram auto-lays out as it grows and changes, always looking good. Plus by following the 5 laws of literate code mapping, you have a simple methodology to follow rather than unstructured and undisciplined personal notes that cannot be shared and will likely end up in the bin.
 
-To create code subsections in boxes/classes, use the following markdown sytax e.g.:
+It is recommended to use [PlantUML](http://plantuml.com/) markup to generate your Literate Code Map diagrams. [GitUML](https://www.gituml.com) supports building Literate Code Map diagrams online with a built in PlantUML editor plus useful PlantUML snippets that support Literate Code Mapping e.g. adding a "code compartment" or cross reference.
+
+To create code compartment in boxes/classes, use the following markdown sytax e.g.:
 
     .. def myfunction(param1, param2): ..
 
@@ -163,8 +165,8 @@ of methods, so that the reader knows there is more detail below.
         $code ...
     }
 
-To include code fragments inside classes, 
-define some handy macros e.g.:
+## Source Code fragments
+To include source code fragments inside the "code compartments" of boxes, define this handy macro at the top of your PlantUML e.g.:
 
     !$code = "<color:royalBlue><size:14>"
 
@@ -172,6 +174,8 @@ then simply add the word `code` before each line of your code fragment. Use spac
 
     $code for i in range(100):
     $code     print(i)
+
+>__Tip:__ By using [GitUML](https://www.gituml.com) to build code maps, you can use simply surround source code fragments with the usual ``` syntax - which is much easier than prepending `$code` before each source code line.
 
 View the [examples directory](https://github.com/abulka/lcodemaps/tree/master/plantuml) for the full source code to the code maps used in this article.
 
