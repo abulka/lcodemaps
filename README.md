@@ -119,7 +119,9 @@ Here are some more examples of literate code maps.
 
 ## More Complex Example
 
-![code map example 02](./images/example-02.svg)
+<!-- ![code map example 02](./images/example-02.svg) -->
+
+![code map example 02](https://github.com/abulka/lcodemaps/blob/master/images/example-02.svg?sanitize=true)
 
 Larger diagrams can be zoomed into.  If they are rendered as SVG images then there is no loss of detail.  All the diagrams in this article are SVG and can be clicked on and zoomed into.
 
