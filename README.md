@@ -115,38 +115,21 @@ This representational idea is also a boon for Javascript programmers who may hav
 
 Here are some more examples of literate code maps.
 
-![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+<!-- too slow to refresh - "regeneration technique"
+![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg) -->
+
+![code map example 01](https://raw.githubusercontent.com/abulka/lcodemaps/master/images/example-01.svg?sanitize=true)
 
 ## More Complex Example
 
-<!-- ![code map example 02](./images/example-02.svg) -->
-
 ![code map example 02](https://raw.githubusercontent.com/abulka/lcodemaps/master/images/example-02.svg?sanitize=true)
 
-
-![mvc-a-architecture](https://raw.githubusercontent.com/tcab/pagestest/master/docs/images/mvc-a-architecture.svg?sanitize=true)
-
-<!-- 
-To display SVG images so that you can click on them to view the SVG alone without any GitHub cruft you need to replace
-https://github.com/abulka/lcodemaps/blob/master/
-with
-https://raw.githubusercontent.com/abulka/lcodemaps/master/
-
-viz.
-https://github.com               /abulka/lcodemaps/blob/master/
-https://raw.githubusercontent.com/abulka/lcodemaps     /master/
-
-viz.
-github.com => raw.githubusercontent.com
-remove blob/
-add ?sanitize=true
--->
 
 ## Event Flow (Literate Code Map Diagram)
 
 Here is an example of a Code Map of the event flow of a small application (my [TodoMVC-OO](https://github.com/abulka/todomvc-oo) implementation in Javascript using traditional OO and Controllers instead of fancy Javascript frameworks). Events are reified as coloured objects, each different event gets a different colour. 
 
-> Note: The eventing pattern depicted here is [Publisher-Subscriber](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c) where real event objects are 'broadcast' into the ether/event bus/system/whatever - allowing any code in the system to subscribe and respond - the point is, the code emitting the event does not have references to receiver object/methods. This eventing approach is more flexible and powerful than the [Observer](https://en.wikipedia.org/wiki/Observer_pattern) pattern since the Observer pattern requires observers to know about and subscribe to Subject objects, which is not always possible or convenient. More dicussion on the differences can be found [in this article](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c) and on [Stackoverflow](https://stackoverflow.com/questions/6439512/difference-between-observer-pattern-and-event-driven-approach). 
+> Note: The eventing pattern depicted here is [Publisher-Subscriber](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) where real event objects are 'broadcast' into the ether/event bus/system/whatever - allowing any code in the system to subscribe and respond - the point is, the code emitting the event does not have references to receiver object/methods. This eventing approach is more flexible and powerful than the [Observer](https://en.wikipedia.org/wiki/Observer_pattern) pattern since the Observer pattern requires observers to know about and subscribe to Subject objects, which is not always possible or convenient. More dicussion on the differences can be found [in this article](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c) and on [Stackoverflow](https://stackoverflow.com/questions/6439512/difference-between-observer-pattern-and-event-driven-approach). 
 
 >I used to be a fan of the traditional Observer pattern but in my later years find the Publisher-Subscriber pattern to be simpler and more powerful - plus Publisher-Subscriber is built into Javascript you simply `document.addEventListener("hello", (event) => { ... })` to listen and `document.dispatchEvent(new CustomEvent(event_name, { detail: {from: from, data: data } }))` to notify all.
 
@@ -157,12 +140,6 @@ Notice in the following code map diagram the:
 
 ![todomvc_events](https://raw.githubusercontent.com/abulka/todomvc-oo/master/docs/images/todomvc_events.svg?sanitize=true)
 *(click on diagram for more detail and the ability to zoom)*
-
-## Zoom in to view more detail
-
-Larger diagrams can be zoomed into.  If they are rendered as SVG images then there is no loss of detail.  All the diagrams in this article are SVG and can be clicked on and zoomed into.
-
-The public PlantUML server used to render these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the [PlantUML Server Documentation](http://plantuml.com/server). See also the helpfile in [Pynsource](www.pynsource.com) (Python UML tool for Mac, Windows, Linux) as it contains more specific PlantUML server local install instructions.
 
 # Building your own Literate Code Maps
 
@@ -223,6 +200,14 @@ View the [examples directory](https://github.com/abulka/lcodemaps/tree/master/pl
 
 [![](http://img.youtube.com/vi/ZnVMOhaIIM8/0.jpg)](http://www.youtube.com/watch?v=ZnVMOhaIIM8 "Quick Start - Creating a diagram and adding a code map compartment")
 *2 minute video tutorial*
+
+### Zoom
+
+Literate Code Maps are ideally generated as `.svg` files so that users can zoom in to view more detail and there is never any loss of important detail.  All the diagrams in this article are SVG and can be clicked on and zoomed into.
+
+### Diagram Size
+
+The public PlantUML server used to render some of these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the [PlantUML Server Documentation](http://plantuml.com/server). See also the helpfile in [Pynsource](www.pynsource.com) (Python UML tool for Mac, Windows, Linux) as it contains more specific PlantUML server local install instructions.
 
 # History - Why Code Maps?
 
