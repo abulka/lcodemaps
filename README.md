@@ -138,7 +138,7 @@ Notice in the following code map diagram the:
 - use of corresponding **colour** on the event
 - use of corresponding **colour** of the code fragments
 
-![todomvc_events](https://raw.githubusercontent.com/abulka/todomvc-oo/master/docs/images/todomvc_events.svg?sanitize=true)
+![todomvc_events](https://raw.githubusercontent.com/abulka/todomvc-oo/master/docs/images/todomvc-oo-event-flow-gituml-134.svg?sanitize=true)
 *(click on diagram for more detail and the ability to zoom)*
 
 # Building your own Literate Code Maps
