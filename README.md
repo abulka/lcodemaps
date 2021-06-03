@@ -230,7 +230,12 @@ Finally I moved on to using PlantUML markup code - allowing the diagrams and not
 
 ## Evolution - stage 4 (2021)
 
-In June 2021 I discovered that the free diagramming tool draw.io had an extension for Vscode, which allowed you to draw diagrams without leaving vscode. So for fun I manually built a literate code map of some code I was working on - all handcrafted with copy and paste etc. By breaking up the diagram into smaller pieces (viz. ensure a function call source line or a method definition source line is its own text object in draw.io), I was able to get arrow 'calls' from and to the actual line of source code that I wanted - very precise.  
+In June 2021 I discovered that the free diagramming tool draw.io had an [extension for Vscode](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio&ssr=false#overview), which allowed you to draw diagrams without leaving vscode. So for fun I manually built a literate code map of some code I was working on - all handcrafted with copy and paste etc. By breaking up the diagram into smaller pieces (viz. ensure a function call source line or a method definition source line is its own text object in draw.io), I was able to get arrow 'calls' from and to the actual line of source code that I wanted - very precise.  
+
+![literate-drawio-vscode-01](images/literate-drawio-vscode-01.png)
+*Demonstrates a literate code map built in draw.io*
+
+In this diagram source code areas (a key feature of literate code mapping) are attempted as both a screen shot (faster to make) and also as copy pasted text (had to correct indenting after paste).
 
 Draw.io has
 - lots of formatting (text, colour etc) choices for my diagramming. 
@@ -242,9 +247,7 @@ Draw.io has
 
 This last feature (the 'code linking' feature of draw.io) is possibly the coolest - whereby adding `#symbolname` text to any diagram object auto navigates to the source code of that symbol when you double clicked it (make sure drawio code linking is toggled on in the bottom status bar). This means that I can jump from the diagram to the source code with a double click - very powerful.
 
-![literate-drawio-vscode-01 - image ref which works on main github page](/images/literate-drawio-vscode-01.gif)
-
-![literate-drawio-vscode-01 - image ref which works on github pages https://abulka.github.io/lcodemaps/](https://raw.github.com/abulka/lcodemaps/master/images/literate-drawio-vscode-01.gif)
+![literate-drawio-vscode-01 - image ref which works on main github page](images/literate-drawio-vscode-01.gif)
 *Demonstrates a literate code map built in draw.io, double clicking on diagram areas to jump to associated source code & collapsing diagram areas.*
 
 - View raw gif [literate-drawio-vscode-01](https://github.com/abulka/lcodemaps/blob/master/images/literate-drawio-vscode-01.gif) gif.
@@ -252,7 +255,7 @@ This last feature (the 'code linking' feature of draw.io) is possibly the cooles
 
 
 ### Further thoughts on draw.io
-Whilst this 'stage 4' evolution of Literate Code Mapping is not as automated and rapid as that supported by [GitUML](https://www.gituml.com), it does show how a rich diagramming tool could take literate code mapping to another level - esp. with with source code linking features. 
+Whilst this 'stage 4' evolution of Literate Code Mapping is not as automated and rapid as that supported by [GitUML](https://www.gituml.com), it does show how a rich diagramming tool could take literate code mapping to another level - esp. with with source code linking and collaboration features. 
 
 The draw.io approach to building literate code maps is currently relatively slow and tedious, very hand crafted, very 'literate' in the sense that you have lots more control to be as non-UML as you like. To mitigate this with some automation, I'm thinking that a Literate Code Mapping Vscode extension could perhaps be built to communicate with the draw.io diagram to automatically parse code, build UML style objects and embed literate code mapping areas automatically, from selected code fragments.
 
