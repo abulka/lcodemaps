@@ -32,11 +32,11 @@ For programmers, data means source code including variables, data structures, sa
 
 The traditional UML class 
 
-![basic uml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/basic-uml.puml&fmt=svg)
+![basic uml](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/basic-uml.puml&fmt=svg)
 
 becomes data rich and full of useful detail
 
-![basic code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/basic-codemap.puml&fmt=svg)
+![basic code map](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/basic-codemap.puml&fmt=svg)
 
 A diagram need only list the code fragments that are required to tell a particular use case **story**.
 
@@ -46,7 +46,7 @@ To avoid being lost in abstraction, Literate Code Maps rely on textual narrative
 as well as numbered steps for the reader to follow. 
 A diagram should have a starting point and a series of steps to follow, to tell a use case story:
 
-![numbered steps code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/numbered-steps.puml&fmt=svg)
+![numbered steps code map](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/numbered-steps.puml&fmt=svg)
 
 Notice the box "H" which represents a HTML file - you see, boxes can represent any Namespace or Component - not just Classes, as we will see below.
 
@@ -84,7 +84,7 @@ It is recommended that boxes have a "stereotype" indicating what kind of box it 
 
 HTML files with fragments of HTML markup can be represented - great for showing how code interacts with HTML templating. 
 
-![html file code map](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/html-example.puml&fmt=svg)
+![html file code map](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/html-example.puml&fmt=svg)
 
 Javascript code fragments residing in the HTML file
 can be represented - see above diagram.
@@ -102,7 +102,7 @@ def fred():
 
 turns into 
 
-![Python module as pseudo class](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/python-module.puml&fmt=svg)
+![Python module as pseudo class](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/python-module.puml&fmt=svg)
 
 which looks like a class, even though there is not a class in sight!
 
@@ -116,7 +116,7 @@ This representational idea is also a boon for Javascript programmers who may hav
 Here are some more examples of literate code maps.
 
 <!-- too slow to refresh - "regeneration technique"
-![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg) -->
+![code map example 01](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg) -->
 
 ![code map example 01](https://raw.githubusercontent.com/abulka/lcodemaps/master/images/example-01.svg?sanitize=true)
 
@@ -147,7 +147,7 @@ By building a Literate Code Map of a particular use case story in  your code bas
 
 >Think of building a Literate Code Map as the process of "taking notes" as you study code - something that most programmers aleady do. The benefit of a code map is that the diagram auto-lays out as it grows and changes, always looking good. Plus by following the 5 laws of literate code mapping, you have a simple methodology to follow rather than unstructured and undisciplined personal notes that cannot be shared and will likely end up in the bin.
 
-It is recommended to use [PlantUML](http://plantuml.com/) markup to generate your Literate Code Map diagrams. [GitUML](https://www.gituml.com) supports building Literate Code Map diagrams online with a built in PlantUML editor plus useful PlantUML snippets that support Literate Code Mapping e.g. adding a "code compartment" or cross reference.
+It is recommended to use [PlantUML](https://plantuml.com/) markup to generate your Literate Code Map diagrams. [GitUML](https://www.gituml.com) supports building Literate Code Map diagrams online with a built in PlantUML editor plus useful PlantUML snippets that support Literate Code Mapping e.g. adding a "code compartment" or cross reference.
 
 To create code compartment in boxes/classes, use the following markdown sytax e.g.:
 
@@ -198,7 +198,7 @@ View the [examples directory](https://github.com/abulka/lcodemaps/tree/master/pl
 ## Tools to build code maps
 [GitUML](https://www.gituml.com) supports building UML and Literate Code Map diagrams online, using a combination of source code reverse engineering and PlantUML markup.
 
-[![](http://img.youtube.com/vi/ZnVMOhaIIM8/0.jpg)](http://www.youtube.com/watch?v=ZnVMOhaIIM8 "Quick Start - Creating a diagram and adding a code map compartment")
+[![](https://img.youtube.com/vi/ZnVMOhaIIM8/0.jpg)](https://www.youtube.com/watch?v=ZnVMOhaIIM8 "Quick Start - Creating a diagram and adding a code map compartment")
 *2 minute video tutorial*
 
 ### Zoom
@@ -207,7 +207,7 @@ Literate Code Maps are ideally generated as `.svg` files so that users can zoom 
 
 ### Diagram Size
 
-The public PlantUML server used to render some of these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the [PlantUML Server Documentation](http://plantuml.com/server). See also the helpfile in [Pynsource](www.pynsource.com) (Python UML tool for Mac, Windows, Linux) as it contains more specific PlantUML server local install instructions.
+The public PlantUML server used to render some of these code maps has a limit on the size of the diagrams it produces. You can easily set up your own PlantUML server locally which not only is faster, but can generate much larger diagrams before clipping them. See the [PlantUML Server Documentation](https://plantuml.com/server). See also the helpfile in [Pynsource](www.pynsource.com) (Python UML tool for Mac, Windows, Linux) as it contains more specific PlantUML server local install instructions.
 
 # History - Why Code Maps?
 
@@ -224,7 +224,31 @@ Over the years, this became a useful and effective habit: when stuck, take a bre
 Finally I moved on to using PlantUML markup code - allowing the diagrams and notes to be automatically laid out, be pretty to look at and maintainable.
 
 ## Evolution - stage 3
-![code map example 01](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+![code map example 01](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
+
+## Evolution - stage 4 (2021)
+
+In June 2021 I discovered that the free diagramming tool draw.io had an extension for Vscode, which allowed you to draw diagrams without leaving vscode. So for fun I manually built a literate code map of some code I was working on - all handcrafted with copy and paste etc. By breaking up the diagram into smaller pieces (viz. ensure a function call source line or a method definition source line is its own text object in draw.io), I was able to get arrow 'calls' from and to the actual line of source code that I wanted - very precise.  
+
+Draw.io has
+- lots of formatting (text, colour etc) choices for my diagramming. 
+- the ability to collapse and expand diagram areas - very handy when building large diagrams - there is a layout feature too.
+- custom template shapes - I'm thinking about building a set to help hand craft literate code maps using draw.io.
+- an ability to liveshare to present or edit diagrams collaboratively
+- the ability to paste screenshots into a diagram - I used this to screen shot some code rather futzing with copy paste of text and correcting and indenting the resulting diagram text box - it was faster.
+- the ability to link a screenshot or a text box node of e.g. a react component "MyComponent" with its source by naming the node "#MyComponent"?
+
+This last feature (the 'code linking' feature of draw.io) is possibly the coolest - whereby adding `#symbolname` text to any diagram object auto navigates to the source code of that symbol when you double clicked it (make sure drawio code linking is toggled on in the bottom status bar). This means that I can jump from the diagram to the source code with a double click - very powerful.
+
+![literate-drawio-vscode-01](https://raw.github.com/abulka/lcodemaps/master/images/literate-drawio-vscode-01.gif)
+*Demonstrates double clicking on diagram areas and jumping to the source code. Also demonstrates collapsing and expanding diagram areas.*
+
+Download the above diagram file [renaming.drawio](https://raw.github.com/abulka/lcodemaps/master/images/renaming.drawio).
+
+Whilst this 'stage 4' evolution of Literate Code Mapping is not as automated and rapid as that supported by [GitUML](https://www.gituml.com), it does show how a rich diagramming tool with source code linking features could take literate code mapping to another level. 
+
+The only problem with the draw.io approach is that building literate code maps in this way is slow and tedious. I'm thinking that a Literate Code Mapping Vscode extension could perhaps be built to communicate with the draw.io diagram to automatically parse code, build UML style objects and embed literate code mapping areas automatically, from selected code fragments.
+
 
 # Tufte
 
@@ -244,7 +268,7 @@ Literate Code Maps are not UML.
 
 Code Maps are more detailed and can actually be used to debug code and add features, because they contain code fragments which are relevant to day to day programmers. They contain narrative, story telling text - which leverages how we learn. They also take advantage of the human eye’s broad bandwidth pathway to take in visual information.
 
-UML *is* useful when judiciously used, but most UML diagrams tend to be too abstract to actually be helpful to a programmer.  As I write in [my blog](http://www.andypatterns.com/), 
+UML *is* useful when judiciously used, but most UML diagrams tend to be too abstract to actually be helpful to a programmer.  As I write in [my blog](https://www.andypatterns.com/), 
 
 > UML (Unified Modelling Language) has fallen out of favour in the last decade and now tends to only get used in the most basic of ways.  Sketches on whiteboards to commuicate class relationships or code execution sequences. Or simple diagrams in documentation and designs.  Nobody uses the complex notations of UML 2, because digramming cannot keep up with the myriad programming techniques and paradigms of 2018 - code is simply not reducible to visual information.
 
