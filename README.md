@@ -240,10 +240,12 @@ Draw.io has
 
 This last feature (the 'code linking' feature of draw.io) is possibly the coolest - whereby adding `#symbolname` text to any diagram object auto navigates to the source code of that symbol when you double clicked it (make sure drawio code linking is toggled on in the bottom status bar). This means that I can jump from the diagram to the source code with a double click - very powerful.
 
+![literate-drawio-vscode-01](https://github.com/abulka/lcodemaps/blob/master/images/literate-drawio-vscode-01.gif)
+
 ![literate-drawio-vscode-01](https://raw.github.com/abulka/lcodemaps/master/images/literate-drawio-vscode-01.gif)
 *Demonstrates double clicking on diagram areas and jumping to the source code. Also demonstrates collapsing and expanding diagram areas.*
 
-Download the above diagram file [renaming.drawio](https://raw.github.com/abulka/lcodemaps/master/images/renaming.drawio).
+Download the above diagram file [renaming.drawio](https://github.com/abulka/lcodemaps/blob/master/images/renaming.drawio).
 
 Whilst this 'stage 4' evolution of Literate Code Mapping is not as automated and rapid as that supported by [GitUML](https://www.gituml.com), it does show how a rich diagramming tool with source code linking features could take literate code mapping to another level. 
 
