@@ -228,6 +228,10 @@ Finally I moved on to using PlantUML markup code - allowing the diagrams and not
 ## Evolution - stage 3
 ![code map example 01](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/abulka/lcodemaps/master/plantuml/example-01.puml&fmt=svg)
 
+The above diagram was created in [GitUML](https://www.gituml.com) which supports building Literate Code Map diagrams online with a built in PlantUML editor plus useful PlantUML snippets that support Literate Code Mapping e.g. adding a "code compartment" or cross reference.
+
+This is still "state of the art" in terms of convenience and automatic layout etc, despite my thoughts below on the evolution of Literate Code Mapping stage 4.  But if you want a really handcrafted, super-precise diagram with close links to your source code and use the vscode editor, read on!
+
 ## Evolution - stage 4 (2021)
 
 In June 2021 I discovered that the free diagramming tool draw.io had an [extension for Vscode](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio&ssr=false#overview), which allowed you to draw diagrams without leaving vscode. So for fun I manually built a literate code map of some code I was working on - all handcrafted with copy and paste etc. By breaking up the diagram into smaller pieces (viz. ensure a function call source line or a method definition source line is its own text object in draw.io), I was able to get arrow 'calls' from and to the actual line of source code that I wanted - very precise.  
