@@ -1,6 +1,7 @@
 # Literate Code Maps
 
 *Diagramming Methodology Specification - version 1.0 - Author: Andy Bulka*
+https://abulka.github.io/lcodemaps/
 
 Literate Code Maps are diagrams which help programmers understand the structure and behaviour of source code. 
 
@@ -240,16 +241,19 @@ Draw.io has
 
 This last feature (the 'code linking' feature of draw.io) is possibly the coolest - whereby adding `#symbolname` text to any diagram object auto navigates to the source code of that symbol when you double clicked it (make sure drawio code linking is toggled on in the bottom status bar). This means that I can jump from the diagram to the source code with a double click - very powerful.
 
-![literate-drawio-vscode-01](https://github.com/abulka/lcodemaps/blob/master/images/literate-drawio-vscode-01.gif)
+![literate-drawio-vscode-01 - image ref which works on main github page](https://github.com/abulka/lcodemaps/blob/master/images/literate-drawio-vscode-01.gif)
 
-![literate-drawio-vscode-01](https://raw.github.com/abulka/lcodemaps/master/images/literate-drawio-vscode-01.gif)
-*Demonstrates double clicking on diagram areas and jumping to the source code. Also demonstrates collapsing and expanding diagram areas.*
+![literate-drawio-vscode-01 - image ref which works on github pages https://abulka.github.io/lcodemaps/](https://raw.github.com/abulka/lcodemaps/master/images/literate-drawio-vscode-01.gif)
+*Demonstrates double clicking on diagram areas to jump to associated source code & collapsing diagram areas.*
 
-Download the above diagram file [renaming.drawio](https://github.com/abulka/lcodemaps/blob/master/images/renaming.drawio).
+- View raw gif [literate-drawio-vscode-01](https://github.com/abulka/lcodemaps/blob/master/images/literate-drawio-vscode-01.gif)
+- Download the above diagram file [renaming.drawio](https://github.com/abulka/lcodemaps/blob/master/images/renaming.drawio).
+- Download <a href="https://github.com/abulka/lcodemaps/blob/master/images/renaming.drawio" download>renaming.drawio</a>
 
-Whilst this 'stage 4' evolution of Literate Code Mapping is not as automated and rapid as that supported by [GitUML](https://www.gituml.com), it does show how a rich diagramming tool with source code linking features could take literate code mapping to another level. 
+### Further thoughts on draw.io
+Whilst this 'stage 4' evolution of Literate Code Mapping is not as automated and rapid as that supported by [GitUML](https://www.gituml.com), it does show how a rich diagramming tool could take literate code mapping to another level - esp. with with source code linking features. 
 
-The only problem with the draw.io approach is that building literate code maps in this way is slow and tedious. I'm thinking that a Literate Code Mapping Vscode extension could perhaps be built to communicate with the draw.io diagram to automatically parse code, build UML style objects and embed literate code mapping areas automatically, from selected code fragments.
+The draw.io approach to building literate code maps is currently relatively slow and tedious, very hand crafted, very 'literate' in the sense that you have lots more control to be as non-UML as you like. To mitigate this with some automation, I'm thinking that a Literate Code Mapping Vscode extension could perhaps be built to communicate with the draw.io diagram to automatically parse code, build UML style objects and embed literate code mapping areas automatically, from selected code fragments.
 
 
 # Tufte
