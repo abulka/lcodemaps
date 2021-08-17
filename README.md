@@ -26,6 +26,22 @@ Think of literate code maps like UML class diagrams where the classes are now bo
 
 # Quick Intro
 
+## The secret behind being *Literate*
+
+Perhaps you have heard of the saying:
+
+> *Homines dum docent discunt* — Men learn while they teach. - [Seneca](https://en.wikipedia.org/wiki/Docendo_discimus)
+
+Literate Code Mapping is like teaching, mainly just to yourself. The act of drawing boxes with relationships and writing text explanations - to a decent level of literacy and professionalism *will* lead you to understand the code.
+
+Similarly, if you are not dealing with code but dealing with another domain - the same principle applies. Writing a high quality article for oneself is like a literate code map, it clarifies and solves. Try it: When taking notes whilst learning a new area - instead of scrappy notes and jumping from thought to thought, try consolidating your notes into a coherent, literate blog post that flow logically. In the end you'll have an artifact or even article that you can possibly share. More importantly, you will have understood the problem domain, and by re-reading your literate artifact, you will be able to rapidly refresh your memory at any time.
+
+If the domain is not diagram worthy, bullet points and outlines are enough. Some domains don't even need any structure like bullet points and plain text is enough - it's a continuum of tools we employ when being literate.
+
+The important thing is to be `literate`, which is the step by step thinking and exposition of a problem space to a quality level, which solves and explains the problem, for yourself and others.
+
+So, when analysing a domain or code-base, don't just rely on scrappy notes and jumping from thought to thought (in the case of code, jumping from file to file, trying to keep things in your head). That won't guarantee a solution. Be literate!
+
 ## Maximize data density
 
 As [Tuft](https://www.google.com/search?sxsrf=ACYBGNS1EpNz4CfrqW-z9eFY1ZGPhFiGFQ%3A1574306638649&ei=TgPWXbChJ--CrtoPldyooAE&q=tufte+principles&oq=tufte+principles&gs_l=psy-ab.3..35i39l2j0l3.18998.18998..20000...0.4..0.160.160.0j1......0....1..gws-wiz.......0i71.p3-NlWLJeD4&ved=0ahUKEwiwgNufrfrlAhVvgUsFHRUuChQQ4dUDCAs&uact=5) 
