@@ -4,8 +4,6 @@
 
 Literate Code Maps are diagrams which help programmers understand the structure and behaviour of source code. Based on, but more practical than UML.
 
-This Documentation Home Page: [https://abulka.github.io/lcodemaps/](https://abulka.github.io/lcodemaps/).
-
 Code Map diagrams differ from UML diagrams in that they 
 focus on real source code fragments and lots of 
 rich-text formatted story-telling narrative. 
@@ -316,4 +314,12 @@ UML usually lacks normal human, tutorial-like, step by step narrative textual st
 
 # Contributing
 
-If you wish to contribute to this diagramming specification I am open to pull requests. Let's make *Literate Code Maps* something that brings practical, useful visualisation technology back into software development, without the old UML baggage.
+If you wish to contribute to this diagramming specification I am open to pull requests via the project's dedicated [Github Repository](https://github.com/abulka/lcodemaps). 
+
+
+Let's make Literate Code Mapping a practical, useful visualisation technology that can, on ocassion, help software development - without the old UML preconceptions and baggage.
+
+# Resources
+
+- Literate Code Maps [Documentation Home Page](https://abulka.github.io/lcodemaps/).
+- Literate Code Maps [Github Repository](https://github.com/abulka/lcodemaps)
